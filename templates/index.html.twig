@@ -1,0 +1,95 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+    <h1>Julien DIDIER, Symfony Expert (freelance)</h1>
+
+    <section>
+        <p>Hey, I'm an independent Technical Consultant, and a certified Symfony Developer (Expert), in Paris (FR).</p>
+        <p>My job is:
+            <ul>
+                <li>to improve your developer skills with the Symfony Framework</li>
+                <li>to use the best practices for your projects</li>
+                <li>to resolve complex cases by using the power of the Symfony Framework</li>
+                <li>to think of a maintainable and evolutive code</li>
+            </ul>
+        </p>
+        <p>If you need an expertise for your Symfony projects, or a coach for your team, feel free to contact me.</p>
+    </section>
+
+    <section>
+        <h2>Jobs</h2>
+
+        <dl>
+            <dt>Freelance (since 2015)</dt>
+            <dd>Technical Consultant, Tech Lead, Symfony Coach</dd>
+            <dt>SensioLabs (2014 - 2015)</dt>
+            <dd>Technical Architect, Symfony Consultant, Symfony Coach, Symfony Trainer</dd>
+            <dt>SensioLabs (2011 - 2014)</dt>
+            <dd>Symfony Senior Developer, Lead Developer</dd>
+        </dl>
+    </section>
+
+    <section>
+        <h2>References</h2>
+        <ul>
+            <li>SensioLabs Certified Symfony Developer (Expert)</li>
+            <li>Le Figaro</li>
+            <li>Maisons du Monde</li>
+            <li>SensioLabs</li>
+            <li>Auchan E-Commerce France</li>
+            <li>BourseDirect</li>
+            <li>Expertissim</li>
+            <li>Lagardère - Doctissimo</li>
+            <li>BlaBlaCar</li>
+            <li>ETS Globals</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Personal projects</h2>
+
+        <dl>
+            <dt>Home automation</dt>
+            <dd>With a set of Raspberry Pis, I'm automating my home with speech recognition and IoT convergence (Philips Hue, Nest Thermostat).</dd>
+            <dt>biclo.fr</dt>
+            <dd>A website and an Android app for bike sharing users (Paris, Luxembourg, Lyon, Bordeaux, London, Toyama and more).</dd>
+        </dl>
+    </section>
+
+    <section>
+        <h2>Blog</h2>
+
+        <ul>
+            {% for post in posts|reverse %}
+                <li><a href="{{ path("blog_post", {slug: post.slug}) }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </section>
+
+    <section>
+        <h2>Books I've read</h2>
+
+        <ul>
+            <li><a href="https://www.amazon.fr/Culture-en-clandestins-LUX/dp/2754103414/">La Culture en clandestins : L'UX, Lazar Kunstmann</a></li>
+            <li><a href="https://www.amazon.fr/Trop-intelligent-heureux-Ladulte-surdoué/dp/2738120873/">Trop intelligent pour être heureux ? L'adulte surdoué, Jeanne Siaud-Facchin</a></li>
+            <li><a href="https://www.amazon.fr/Zero-One-Notes-Start-Future/dp/0753555204/">Zero to One: Notes on Start Ups, or How to Build the Future, Blake Masters</a></li>
+            <li><a href="https://www.amazon.fr/Lean-Startup-Innovation-Successful-Businesses/dp/0670921602/">The Lean Startup: How Constant Innovation Creates Radically Successful Businesses, Eric Ries</a></li>
+            <li><a href="https://www.amazon.fr/Hipster-Business-Models-living-modern/dp/0692340726/">Hipster Business Models: How to make a living in the modern world, Priceonomics</a></li>
+            <li><a href="https://www.amazon.fr/Rational-Optimist-How-Prosperity-Evolves/dp/0007267126/">Rational Optimist: How Prosperity Evolves, Matt Ridley</a></li>
+            <li><a href="https://www.amazon.fr/Pragmatic-Programmer-Journeyman-Master/dp/020161622X/">The Pragmatic Programmer: From Journeyman to Master, Andrew Hunt, Davis Thomas</a></li>
+            <li><a href="https://www.amazon.fr/Mind-Map-Book-Unlock-creativity/dp/1406647160/">The Mind Map Book: Unlock your creativity, boost your memory, change your life, Tony Buzan</a></li>
+            <li><a href="https://www.amazon.fr/Long-Tail-Future-Business-Selling/dp/1401309666/">The Long Tail: Why the Future of Business Is Selling Less of More, Chris Anderson</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Follow me</h2>
+
+        <a href="http://github.com/juliendidier">Github</a>
+        <a href="http://twitter.com/juliendidier">Twitter</a>
+        <a href="https://www.linkedin.com/in/juliendidier/">LinkedIn</a>
+        <a href="http://connect.sensiolabs.com/profile/juliendidier">SensioLabs Connect</a>
+        <a href="http://soundcloud.com/jdidier">SoundCloud</a>
+    </section>
+
+{% endblock %}
