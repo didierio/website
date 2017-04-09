@@ -1,10 +1,11 @@
 <?php
 
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\RedirectResponse;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 //Request::setTrustedProxies(array('127.0.0.1'));
 
@@ -29,6 +30,31 @@ $app->get('/post/{slug}', function (Request $request, $slug) use ($app) {
         'post' => $post,
     ));
 })->bind('blog_post');
+
+$app->get('sitemap.xml', function (Request $reqest) use ($app) {
+    $router = $app['url_generator'];
+    $now = new \DateTime();
+
+    $urls[] = [
+        'url' => $router->generate('homepage', [], UrlGeneratorInterface::ABSOLUTE_URL),
+        'lastmod' => $now->format('r'),
+        'priority' => 1,
+    ];
+
+    $blog = new Blog($app['blog.dir']);
+
+    foreach ($blog->all() as $post) {
+        $urls[] = [
+            'url' => $router->generate('blog_post', ['slug' => $post['slug']], UrlGeneratorInterface::ABSOLUTE_URL),
+            'lastmod' => $post['updated_at']->format('r'),
+            'priority' => 1,
+        ];
+    }
+
+    return $app['twig']->render('sitemap.xml.twig', array(
+        'urls' => $urls,
+    ));
+});
 
 $app->error(function (\Exception $e, Request $request, $code) use ($app) {
     if ($app['debug']) {
