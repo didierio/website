@@ -22,15 +22,12 @@
         </style>
     </head>
     <body>
-        {% block content %}{% endblock %}
-
         {% if global.request.attributes.get('_route') != "homepage" %}
             <section>
-                <h3>Navigation</h3>
-                <ul>
-                    <li><a href="{{ path("homepage") }}">Back to home</a></li>
-                </ul>
+                <p><a href="{{ path("homepage") }}">Back to home</a></p>
             </section>
         {% endif %}
+
+        {% block content %}{% endblock %}
     </body>
 </html>
