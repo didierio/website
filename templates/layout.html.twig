@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Julien DIDIER, Symfony Expert (freelance)</title>
+        <title>{% block title "Julien DIDIER, Symfony Expert (freelance)" %}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -23,5 +23,14 @@
     </head>
     <body>
         {% block content %}{% endblock %}
+
+        {% if global.request.attributes.get('_route') != "homepage" %}
+            <section>
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="{{ path("homepage") }}">Back to home</a></li>
+                </ul>
+            </section>
+        {% endif %}
     </body>
 </html>
