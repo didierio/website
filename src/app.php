@@ -12,7 +12,7 @@ $app->register(new AssetServiceProvider());
 $app->register(new TwigServiceProvider());
 $app->register(new HttpFragmentServiceProvider());
 $app['twig'] = $app->extend('twig', function ($twig, $app) {
-    $twig->addFilter(new Twig_Filter('rst2html', function ($text) {
+    $twig->addFilter(new Twig_SimpleFilter('rst2html', function ($text) {
         $parsedown = new Parsedown();
 
         return $parsedown->text($text); 
