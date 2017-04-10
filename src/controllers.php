@@ -27,6 +27,14 @@ $app->get('/post/{slug}', function (Request $request, $slug) use ($app) {
     ));
 })->bind('blog_post');
 
+$app->get('feed.xml', function (Request $request) use ($app) {
+    $blog = new Blog($app['blog.dir']);
+
+    return $app['twig']->render('feed.xml.twig', array(
+        'posts' => $blog->all(),
+    ));
+});
+
 $app->get('sitemap.xml', function (Request $reqest) use ($app) {
     $router = $app['url_generator'];
     $now = new \DateTime();

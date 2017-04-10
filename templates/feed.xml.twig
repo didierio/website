@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+<rss version="2.0">
+  <channel>
+    <title>Julien DIDIER - Symfony Consultant</title>
+    <link>https://didier.io</link>
+    <description>Symfony Consultant and IoT lover</description>
+    <image>
+      <url>http://media.didier.io/api/get/a3f025baaaf1d14805841608067d1edf</url>
+      <link>https://didier.io</link>
+    </image>
+
+    {% for post in posts %}
+      <item>
+        <title>{{ post.title }}</title>
+        <link>{{ url("blog_post", {slug: post.slug}) }}</link> 
+        <description><![CDATA[{{ post.excerpt | rst2html | raw }}]]></description>
+      </item>
+    {% endfor %}
+  </channel>
+</rss> 
