@@ -6,7 +6,6 @@
     <h1>{{ post.title }}</h1>
 
     <article>
-        {{ post.excerpt | rst2html | raw }}
         {{ post.content | rst2html | raw }}
     </article>
 
