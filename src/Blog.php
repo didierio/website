@@ -28,7 +28,7 @@ class Blog
             ->in($this->dir)
             ->sort(
                 function (SplFileInfo $a, SplFileInfo $b) {
-                   return ($b->getMTime() - $a->getMTime());
+                   return ($b->getMTime() < $a->getMTime());
                 }
             )
         ;
