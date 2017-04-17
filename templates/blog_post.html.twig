@@ -3,9 +3,12 @@
 {% block title post.title %}
 
 {% block content %}
-    <h1>{{ post.title }}</h1>
-
     <article>
+        <header>
+            <h1>{{ post.title }}, by Julien DIDIER</h1>
+            <time>{{ post.updated_at|date('r') }}</time>
+        </header>
+
         {{ post.content | rst2html | raw }}
     </article>
 
