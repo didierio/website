@@ -2,6 +2,8 @@
 
 {% block title post.title ~ ', by Julien DIDIER' %}
 
+{% block meta %}{{ post.excerpt|replace({"\n": ''})|raw }}{% endblock %}
+
 {% block content %}
     <article>
         <header>
@@ -9,7 +11,11 @@
             <time>{{ post.updated_at|date('r') }}</time>
         </header>
 
-        {{ post.content | rst2html | raw }}
+
+
+        {{ post.excerpt | parsedown | raw }}
+
+        {{ post.content | parsedown | raw }}
     </article>
 
     <section id="disqus_thread"></section>

@@ -1,50 +1,68 @@
 {% extends "layout.html.twig" %}
 
+{% block meta -%}
+    I'm a Senior Symfony Developer and a SensioLabs Certified Symfony Developer (Expert), freelancer, living in Paris (FR).
+    I'm working on Symfony 2+ projects since 2011 for many companies, like French Unicorns (BlaBlaCar, Dayuse), e-commerce (Maisons du Monde, Auchan, Doctipharma), press (Le Figaro, L'Equipe), etc.
+{%- endblock %}
+
 {% block content %}
-    <h1>Julien DIDIER, Technical Architect, Symfony Expert (freelance)</h1>
+    <h1>Julien DIDIER, Senior Symfony Developer / Symfony Coach (freelance)</h1>
 
     <section>
-        <p>Hey, I'm an independent Technical Architect, and a certified Symfony Developer (Expert), in Paris (FR).</p>
-        <p>My job is:
-            <ul>
-                <li>to improve your developer skills with the Symfony Framework</li>
-                <li>to use the best practices for your projects</li>
-                <li>to resolve complex cases by using the Symfony ecosystem</li>
-                <li>to think of a maintainable and evolutive code</li>
-            </ul>
+        <p>
+            I'm a Senior Symfony Developer and a SensioLabs Certified Symfony Developer (Expert), freelancer, living in Paris (FR).
+            <br />I'm working on Symfony 2+ projects since 2011 for many companies, like French Unicorns, e-commerce, press, etc.
+            <br />May my experience be valuable for your company? If you think it, let's talk about.
         </p>
-        <p>If you need an expertise for your Symfony projects, or a coach for your team, feel free to contact me.</p>
     </section>
 
     <section>
-        <h2>Jobs</h2>
+        <h2>Skills</h2>
 
-        <dl>
-            <dt>Freelance (since 2015)</dt>
-            <dd>Technical Consultant</dd>
-            <dd>Tech Lead</dd>
-            <dd>Symfony Coach</dd>
-            <dt>SensioLabs (2014 - 2015)</dt>
-            <dd>Technical Architect</dd>
-            <dd>Symfony Consultant</dd>
-            <dd>Symfony Coach</dd>
-            <dd>Symfony Trainer</dd>
-            <dt>SensioLabs (2011 - 2014)</dt>
-            <dd>Symfony Senior Developer</dd>
-            <dd>Lead Developer</dd>
-            <dt>La Netscouade (2010 - 2011)</dt>
-            <dd>Symfony Developer</dd>
-            <dt>FaberNovel (2007 - 2010)</dt>
-            <dd>Symfony Junior Developer</dd>
-            <dt>SA Luc Durand (2005 - 2007)</dt>
-            <dd>PHP Developer</dd>
-        </dl>
+        <h3>Symfony Expert Developer</h3>
+        <p>
+            In 2011, due to my venue at SensioLabs, I had the chance to work with the Symfony2 framework before it was released. Since that day, Symfony is my leitmotiv.
+            <br />In 2015, I was graduated with the SensioLabs Certified Symfony Developer, as an Expert.
+        </p><p>
+            I'm able to develop some specific parts of an application, designed by a feature.
+            <br />I can work with "extreme", Kanban, Agile or SCRUM software development methologies.
+        </p>
+
+        <h3>Symfony Coach</h3>
+        <p>As a Symfony Coach, my job is to improve developer skills with Symfony:</p>
+        <ul>
+            <li>Mentoring a developer team</li>
+            <li>Bring best practices</li>
+            <li>Upgrade developer skills for a better future</li>
+            <li>Check code (pull requests)</li>
+        </ul>
+        <p>I had to coach some project teams. I attended all the SCRUM meetings. When a developer takes a story which need some Symfony skills, I coach him. We talk about the parts of the Symfony framework that will help him to code. After explaining what we will do, the developer starts coding with me, to be sure everything is ok and to answer his queries.</p>
+
+        <h3>Technical Architect</h3>
+        <p>As a Technical Architect, my job is to find the best technical solutions to answer functional purposes. The process could follows these steps:</p>
+        <ul>
+            <li>Understanding the need and its context</li>
+            <li>Leading grooming meetings, with the developer team</li>
+            <li>Thinking about a reliable, maintainable and evolutive solution</li>
+            <li>Developing the core and share it to the team</li>
+        </ul>
+        <p>I was called to recast a customer space. My job was to think about a SOA implementation of the data (user API, newsletter API, etc) powered by REST APIs. I decided to use the OAuth2 framework for authentication (access tokens and refresh tokens) and authorizations (scopes). I developed and delivered the first implementation of the OAuth2 server. To instantiate quickly new APIs, the team used a home made and reusable APIBundle I developed for another project, which allows to configure new endpoints without any line of code.</p>
+
+        <h3>Symfony Consultant</h3>
+        <p>As a Symfony Consultant, I am able to:</p>
+        <ul>
+            <li>Answer specific needs</li>
+            <li>Review code</li>
+            <li>Analyze technical debts, and write audit reports</li>
+        </ul>
+        <p>At Maisons du Monde, two days every two weeks, I worked with the lead developers, to help them to take the best choices for the website. To help them, I wrote some Proof Of Concepts, like an example of soft migration from symfony 1.4 to Symfony2, or a OAuth2 implementation.</p>
     </section>
 
     <section>
         <h2>References</h2>
         <ul>
             <li>SensioLabs Certified Symfony Developer (Expert)</li>
+            <li>Dayuse</li>
             <li>Le Figaro</li>
             <li>Maisons du Monde</li>
             <li>Agence DnD</li>
