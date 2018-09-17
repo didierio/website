@@ -13,9 +13,9 @@
 
 
 
-        {{ post.excerpt | parsedown | raw }}
+        {{ post.excerpt | rst2html | raw }}
 
-        {{ post.content | parsedown | raw }}
+        {{ post.content | rst2html | raw }}
     </article>
 
     <section id="disqus_thread"></section>
